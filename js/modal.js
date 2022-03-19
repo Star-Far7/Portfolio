@@ -4,13 +4,15 @@
  * в не поля и клавишу ESC
  */
 const getModal = () => {
-  const moreBtn = document.querySelector(".more"),
+  const moreBtn = document.querySelectorAll(".more"),
     modal = document.querySelector(".modal"),
     overlay = document.querySelector(".overlay"),
     closeBtn = document.querySelector(".modal__close");
 
-  moreBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
+  moreBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+    });
   });
 
   closeBtn.addEventListener("click", () => {
